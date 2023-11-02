@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATV 2</title>
+</head>
+<body>
+    <p>Nome: <span id="nome"></span></p>
+    <p>CPF: <span id="cpf"></span></p>
+    <p>Renda Anual: <span id="renanu"></span></p>
+    <p>Imposto: <span id="liq"></span></p>
+    <script>
+        let nomeCont = prompt("Digite seu nome") ;
+        let cpf = parseInt(prompt("Digite seu cpf")) ;
+        let rendaAnual = parseInt(prompt("Digite sua renda  anual"));
+        let numDepen = parseInt(prompt("Digite o numero de dependentes"))  ;
+
+        let desconto = numDepen * 110.00
+        let rendaLiq = rendaAnual - desconto
+
+        if (rendaLiq <= 900)
+            exibir = "Isento"
+        else if (rendaLiq <= 5000)
+            exibir = "5%"
+        else if (rendaLiq <= 10000)
+            exibir = "10%"
+        else
+            exibir = "15%"
+
+        document.getElementById("nome").innerHTML = nomeCont;
+        document.getElementById("cpf").innerHTML = cpf;
+        document.getElementById("renanu").innerHTML = rendaAnual;
+        document.getElementById("liq").innerHTML = exibir;
+
+    </script>
+</body>
+</html>

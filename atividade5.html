@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recrutamento</title>
+</head>
+<body>
+    <p><span id="nome"></span></p>
+    <script>
+        let idadeCand = []
+        let totalGener = []
+        for(let index = 0; index < 3; index++ ) {  
+            let numeroCand = parseInt(prompt("Digite o numero do candidato"))   
+            let idade = parseInt(prompt("Digite a idade do candidato"))
+            let genero = prompt("Digite o genero do candidato \n [ M ] -Masculino \n [ F ] -Feminino")
+            let exp = prompt("Voce tem experiencia profissional")
+            idadeCand.push(idade)
+            totalGener.push(genero)
+
+    
+        if( idade >= 18 && exp == "Sim" )
+            exibe = "Numero do candidato: " + numeroCand + "<br> Genero: " + genero + "<br> idade: " + idade + "<br> Experiencia: " + exp + "<br> <br> <hr>";
+        else
+            exibe = "Não cumpre os requisitos <br> <br> <hr>"
+
+        document.write(exibe)
+    }
+
+    let candF = 0;
+    let candM = 0;
+
+    totalGener.forEach( gener => {
+            if(gener == "M")
+                candM++
+            else
+                candF++
+        });
+
+    let mediaIdCand = 0;
+
+    for(var i = 0; i < idadeCand.length; i++) {
+        mediaIdCand += idadeCand[i];
+    }
+    let idadeMed = parseInt(mediaIdCand / idadeCand.length) 
+    
+    document.write("A idade media dos candidatos é " + idadeMed + " <br> <br> <hr>")
+    document.write("A " + candF + " candidatas mulheres, e " + candM + " candidatos masculinos")
+    </script>
+</body>
+</html>

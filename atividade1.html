@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATV 1</title>
+</head>
+<body>
+    <div id="exibe">
+    <script>
+        let pergunta = parseInt(prompt("Você deseja cadastrar a disciplina? \n [ 0 ] - Sim \n [ 1 ] - Não"))
+
+        while( pergunta == 0){
+            let disciplina = prompt("Digite o nome da disciplina")
+            let descricaoDis = prompt("Digite a descrição da disciplina")
+            let frequencia = prompt("Digite a frequência minima da disciplina")
+            let notaMin = prompt("Nota minima para a disciplina")
+        
+            document.write(`
+            <p>Disciplina: ${disciplina}</p>
+            <p>Descrição: ${descricaoDis}</p>
+            <p>Frequência: ${frequencia}</p>
+            <p>Nota Minima: ${notaMin}</p>
+            <hr>`)
+            pergunta = parseInt(prompt("Você deseja cadastrar uma nova disciplina? \n [ 0 ] - Sim \n [ 1 ] - Não"))
+        }
+    </script>
+    </div>
+</body>
+</html>

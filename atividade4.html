@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação aluno</title>
+</head>
+<body>
+    <div id="exibe">
+    <script>
+
+        let mediaSala = []
+        let alunos = []
+        
+        let pergunta = parseInt(prompt("Você deseja cadastrar a situação de um aluno? \n [ 0 ] -Sim \n [ 1 ] -Não"))
+
+        while(pergunta == 0) {
+            let matricula = parseInt(prompt("Digite o numero da matricula"))
+            alunos.push(matricula)
+            let nota1 = parseInt(prompt("Digite a primeira nota"))
+            let nota2 = parseInt(prompt("Digite a segunda nota"))
+            let nota3 = parseInt(prompt("Digite a terceira nota"))
+            let faltas = parseInt(prompt("Digite quantas faltas o aluno tem"))
+    
+            let media = parseInt((nota1 + nota2 + nota3) / 3)
+            mediaSala.push(media)
+            let freqNec = (32 * 80) / 100
+
+            let exibe = ""
+
+            if( media >= 7 && faltas < freqNec)
+                exibe = "Aprovado"
+            else
+                exibe= "Reprovado"
+
+            document.write(`
+            <h1>Avaliação</h1>
+            <p>Matricula: ${matricula}</p>
+            <p>Media:${media}</p>
+            <p>Resultado: ${exibe}</p>
+            <hr>`)
+
+        pergunta = parseInt(prompt("Você deseja cadastrar a situação de um novo aluno? \n [ 0 ] -Sim \n [ 1 ] -Não"))
+    }
+        ms = parseInt(0);
+    
+        for(var i = 0; i < mediaSala.length; i++) {
+        ms += mediaSala[i];
+    }
+        let mediaTurma = (ms) / alunos.length
+        document.write("A media da turma é " + mediaTurma)
+    </script>
+    </body>
+</body>
+</html>
